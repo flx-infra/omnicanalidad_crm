@@ -10,16 +10,16 @@ services:
     restart: unless-stopped
     environment:
       # Server
-      PORT: 4001
+      PORT: 6001
       NODE_ENV: ${NODE_ENV:-production}
       BACKEND_URL: ${BACKEND_URL:-http://localhost:6001}
 
       # Database - connect to external MySQL service
-      DB_HOST: ${DB_HOST:-mysql}
-      DB_PORT: ${DB_PORT:-3306}
-      DB_NAME: ${DB_NAME:-omnicanalidad}
-      DB_USER: ${DB_USER:-omnicanalidad_user}
-      DB_PASSWORD: ${DB_PASSWORD:-omnicanalidad_pass}
+      DB_HOST: ${DB_HOST}
+      DB_PORT: ${DB_PORT}
+      DB_NAME: ${DB_NAME}
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
 
       # Authentication
       JWT_SECRET: ${JWT_SECRET:-change-this-secret-in-production}
@@ -83,7 +83,7 @@ services:
       EXTERNAL_API_KEY: ${EXTERNAL_API_KEY}
 
     ports:
-      - "4001:4001"
+      - "6001:6001"
     volumes:
       - backend_uploads:/app/uploads
       - backend_logs:/app/logs
@@ -125,7 +125,7 @@ services:
       REACT_APP_SHOW_RULES_BANNER: ${REACT_APP_SHOW_RULES_BANNER:-false}
       REACT_APP_SHOW_CRM: ${REACT_APP_SHOW_CRM:-true}
     ports:
-      - "${FRONTEND_PORT:-4002}:80"
+      - "${FRONTEND_PORT:6002}"
     networks:
       - traefik
     depends_on:
