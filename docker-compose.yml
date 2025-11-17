@@ -111,7 +111,10 @@ services:
   # Frontend React Service
   # ============================================
   frontend:
-    image: fabreguesm/omnicanalidad-frontend:1.0.1
+    image: fabreguesm/omnicanalidad-frontend:1.0.2
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
     container_name: omnicanalidad-frontend
     restart: unless-stopped
     command: ["nginx", "-g", "daemon off;"]
