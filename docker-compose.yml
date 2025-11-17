@@ -112,11 +112,11 @@ services:
   # ============================================
   frontend:
     image: fabreguesm/omnicanalidad-frontend:1.0.1
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile
-    container_name: omnicanalidad-frontend
-    restart: unless-stopped
+   # build:
+   #   context: ./frontend
+   #   dockerfile: Dockerfile
+   # container_name: omnicanalidad-frontend
+   # restart: unless-stopped
     environment:
       # Runtime environment variables (can be changed in Portainer)
       # These are injected into env-config.js by the entrypoint script
