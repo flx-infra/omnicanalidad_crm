@@ -125,7 +125,7 @@ services:
       REACT_APP_SHOW_RULES_BANNER: ${REACT_APP_SHOW_RULES_BANNER:-false}
       REACT_APP_SHOW_CRM: ${REACT_APP_SHOW_CRM:-true}
     ports:
-      - "${FRONTEND_PORT:6002}"
+      - ${FRONTEND_PORT:-6002}
     networks:
       - traefik
     depends_on:
