@@ -111,7 +111,7 @@ services:
   # Frontend React Service
   # ============================================
   frontend:
-    image: fabreguesm/omnicanalidad-frontend:1.0.3
+    image: fabreguesm/omnicanalidad-frontend:1.0.4
     build:
       context: ./frontend
       dockerfile: Dockerfile
