@@ -12,7 +12,7 @@ services:
       # Server
       PORT: 6001
       NODE_ENV: ${NODE_ENV:-production}
-      BACKEND_URL: ${BACKEND_URL:-http://localhost:6001}
+      BACKEND_URL: ${BACKEND_URL:-http://10.250.0.68:6001}
 
       # Database - connect to external MySQL service
       DB_HOST: ${DB_HOST}
@@ -67,20 +67,20 @@ services:
       SENDGRID_API_KEY: ${SENDGRID_API_KEY}
 
       # ERP
-      ERP_API_URL: ${ERP_API_URL:-http://localhost:5003/v5}
+      ERP_API_URL: ${ERP_API_URL:-http://10.250.0.68:5019}
       ERP_API_USERNAME: ${ERP_API_USERNAME}
       ERP_API_PASSWORD: ${ERP_API_PASSWORD}
       ERP_API_DEVICE_UUID: ${ERP_API_DEVICE_UUID}
-      ERP_API_DEVICE_MODEL: ${ERP_API_DEVICE_MODEL:-CRM_Omnicanalidad}
+      ERP_API_DEVICE_MODEL: ${ERP_API_DEVICE_MODEL:-Omnicanalidad}
       ERP_API_DEVICE_PLATFORM: ${ERP_API_DEVICE_PLATFORM:-nodejs}
       ERP_API_DEVICE_VERSION: ${ERP_API_DEVICE_VERSION:-1.0.0}
       ERP_API_DEVICE_MANUFACTURER: ${ERP_API_DEVICE_MANUFACTURER:-Internal}
       ERP_API_TIMEOUT: ${ERP_API_TIMEOUT:-30000}
 
       # Development
-      FRONTEND_URL: ${FRONTEND_URL:-http://localhost:6002}
+      FRONTEND_URL: ${FRONTEND_URL:-http://10.250.0.68:6002}
       LOG_LEVEL: ${LOG_LEVEL:-info}
-      EXTERNAL_API_KEY: ${EXTERNAL_API_KEY}
+      EXTERNAL_API_KEY: ${EXTERNAL_API_KEY:-dev-external-key-change-in-production}
 
     ports:
       - "6001:6001"
