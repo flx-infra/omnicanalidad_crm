@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   backend:
-    image: fabreguesm/omnicanalidad-backend:1.0.3
+    image: fabreguesm/omnicanalidad-backend:1.0.4
     build:
       context: ./backend
       dockerfile: Dockerfile
