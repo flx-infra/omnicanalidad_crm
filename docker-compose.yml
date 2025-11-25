@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   backend:
-    image: fabreguesm/omnicanalidad-backend:1.0.2
+    image: fabreguesm/omnicanalidad-backend:1.0.3
     build:
       context: ./backend
       dockerfile: Dockerfile
@@ -111,7 +111,7 @@ services:
   # Frontend React Service
   # ============================================
   frontend:
-    image: fabreguesm/omnicanalidad-frontend:1.0.4
+    image: fabreguesm/omnicanalidad-frontend:1.0.5
     build:
       context: ./frontend
       dockerfile: Dockerfile
