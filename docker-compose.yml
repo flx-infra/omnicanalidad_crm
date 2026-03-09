@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   backend:
-    image: fabreguesm/omnicanalidad-backend:1.0.17
+    image: fabreguesm/omnicanalidad-backend:1.0.14
     build:
       context: ./backend
       dockerfile: Dockerfile
@@ -111,7 +111,7 @@ services:
   # Frontend React Service
   # ============================================
   frontend:
-    image: fabreguesm/omnicanalidad-frontend:1.0.17
+    image: fabreguesm/omnicanalidad-frontend:1.0.14
     build:
       context: ./frontend
       dockerfile: Dockerfile
@@ -155,5 +155,7 @@ networks:
 volumes:
   backend_uploads:
     name: omnicanalidad-backend-uploads
+  backend_crm_documents:
+    name: omnicanalidad-backend-crm-documents
   backend_logs:
     name: omnicanalidad-backend-logs
