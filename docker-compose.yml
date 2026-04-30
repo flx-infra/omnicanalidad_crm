@@ -146,7 +146,7 @@ services:
 # ============================================
 networks:
   traefik:
-    name: traefik
+    name: traefik-network
     external: true
 
 # ============================================
