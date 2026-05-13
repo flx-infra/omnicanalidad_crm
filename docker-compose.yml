@@ -9,10 +9,12 @@ services:
     container_name: omnicanalidad-backend
     restart: unless-stopped
     environment:
+      TZ: America/Argentina/Buenos_Aires
       # Server
       PORT: 6001
       NODE_ENV: ${NODE_ENV:-production}
       BACKEND_URL: ${BACKEND_URL:-http://10.250.0.68:6001}
+      
 
       # Database - connect to external MySQL service
       DB_HOST: ${DB_HOST}
