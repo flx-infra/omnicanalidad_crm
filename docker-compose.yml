@@ -14,7 +14,10 @@ services:
       PORT: 6001
       NODE_ENV: ${NODE_ENV:-production}
       BACKEND_URL: ${BACKEND_URL:-http://10.250.0.68:6001}
-      
+
+      # Database - Prisma (URL-encodeá caracteres especiales en usuario/password,
+      # ej: '#' -> '%23', '@' -> '%40'). En defaults los valores son alfanuméricos.
+      DATABASE_URL: ${DATABASE_URL:-mysql://${DB_USER:-omnicanalidad_user}:${DB_PASSWORD:-omnicanalidad_pass}@mysql:3306/${DB_NAME:-omnicanalidad}?connection_limit=100&pool_timeout=30}
 
       # Database - connect to external MySQL service
       DB_HOST: ${DB_HOST}
