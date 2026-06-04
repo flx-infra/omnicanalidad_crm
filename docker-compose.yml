@@ -114,7 +114,7 @@ services:
     restart: unless-stopped
     command: redis-server --appendonly yes
     ports:
-      - "6380:6379"
+      - "6381:6379"
     volumes:
       - redis_data:/data
     networks:
@@ -149,7 +149,7 @@ services:
       TZ: America/Argentina/Buenos_Aires
       NODE_ENV: ${NODE_ENV:-production}
       DATABASE_URL: ${DATABASE_URL}
-      REDIS_URL: ${REDIS_URL:-redis://10.250.0.68:6380}
+      REDIS_URL: ${REDIS_URL:-redis://10.250.0.68:6381}
       JWT_SECRET: ${JWT_SECRET:-change-this-secret-in-production}
       EMAIL_POLL_INTERVAL_SECONDS: ${EMAIL_POLL_INTERVAL_SECONDS:-120}
       EMAIL_CREDENTIALS_ENCRYPTION_KEY: ${EMAIL_CREDENTIALS_ENCRYPTION_KEY}
