@@ -10,7 +10,7 @@ services:
       NODE_ENV: ${NODE_ENV:-production}
       BACKEND_URL: ${BACKEND_URL:-http://10.250.0.68:6001}
       DATABASE_URL: ${DATABASE_URL}
-      REDIS_URL: ${REDIS_URL:-redis://redis-omnicanalidad:6379}
+      REDIS_URL: ${REDIS_URL:-redis://redis-omnicanalidad:6381}
       JWT_SECRET: ${JWT_SECRET:-change-this-secret-in-production}
       JWT_EXPIRES_IN: ${JWT_EXPIRES_IN:-24h}
       SALT_ROUNDS: ${SALT_ROUNDS:-10}
@@ -149,7 +149,7 @@ services:
       TZ: America/Argentina/Buenos_Aires
       NODE_ENV: ${NODE_ENV:-production}
       DATABASE_URL: ${DATABASE_URL}
-      REDIS_URL: ${REDIS_URL:-redis://10.250.0.68:6379}
+      REDIS_URL: ${REDIS_URL:-redis://10.250.0.68:6381}
       JWT_SECRET: ${JWT_SECRET:-change-this-secret-in-production}
       EMAIL_POLL_INTERVAL_SECONDS: ${EMAIL_POLL_INTERVAL_SECONDS:-120}
       EMAIL_CREDENTIALS_ENCRYPTION_KEY: ${EMAIL_CREDENTIALS_ENCRYPTION_KEY}
