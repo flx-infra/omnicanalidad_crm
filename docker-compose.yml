@@ -10,7 +10,7 @@ services:
       NODE_ENV: ${NODE_ENV:-production}
       BACKEND_URL: ${BACKEND_URL:-http://10.250.0.68:6001}
       DATABASE_URL: ${DATABASE_URL}
-      REDIS_URL: ${REDIS_URL:-redis://redis-defonti:6379}
+      REDIS_URL: ${REDIS_URL:-redis://redis-omnicanalidad:6379}
       JWT_SECRET: ${JWT_SECRET:-change-this-secret-in-production}
       JWT_EXPIRES_IN: ${JWT_EXPIRES_IN:-24h}
       SALT_ROUNDS: ${SALT_ROUNDS:-10}
@@ -49,11 +49,11 @@ services:
       ERP_API_DEVICE_VERSION: ${ERP_API_DEVICE_VERSION:-1.0.0}
       ERP_API_DEVICE_MANUFACTURER: ${ERP_API_DEVICE_MANUFACTURER:-Internal}
       ERP_API_TIMEOUT: ${ERP_API_TIMEOUT:-30000}
-      FRONTEND_URL: ${FRONTEND_URL:-http://10.250.0.68:6004}
+      FRONTEND_URL: ${FRONTEND_URL:-http://10.250.0.68:6002}
       LOG_LEVEL: ${LOG_LEVEL:-info}
       EXTERNAL_API_KEY: ${EXTERNAL_API_KEY:-dev-external-key-change-in-production}
     depends_on:
-      - redis-defonti
+      - redis-omnicanalidad
     ports:
       - "6004:6004"
     volumes:
@@ -109,7 +109,7 @@ services:
       options:
         loki-url: ${LOKI_URL}
 
-  redis-defonti:
+  redis-omnicanalidad:
     image: redis:7-alpine
     restart: unless-stopped
     command: redis-server --appendonly yes
@@ -201,4 +201,4 @@ volumes:
   backend_logs:
     name: omnicanalidad-backend-logs
   redis_data:
-    name: omnicanalidad-redis-data-defonti
+    name: omnicanalidad-redis-data-omnicanalidad
