@@ -134,7 +134,7 @@ services:
         max_attempts: 3
 
   worker:
-    image: fabreguesm/omnicanalidad-backend:1.0.126
+    image: fabreguesm/omnicanalidad-backend:staging
     restart: unless-stopped
     command: ["node", "dist/workers/index.js"]
     networks:
