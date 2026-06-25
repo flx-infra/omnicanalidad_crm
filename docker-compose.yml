@@ -71,6 +71,16 @@ services:
       placement:
         constraints:
           - ${NODE}
+      labels:
+        - "traefik.enable=true"
+        - "traefik.http.routers.${SERVICE_NAME}.entrypoints=web"
+        - "traefik.http.routers.${SERVICE_NAME}.rule=Host(`${DOMAIN_NAME}`)"
+        - "traefik.http.middlewares.${SERVICE_NAME}-http.redirectscheme.scheme=https"
+        - "traefik.http.routers.${SERVICE_NAME}-https.rule=Host(`${DOMAIN_NAME}`)"
+        - "traefik.http.routers.${SERVICE_NAME}-https.entrypoints=https"
+        - "traefik.http.routers.${SERVICE_NAME}-https.tls=true"
+        - "traefik.http.routers.${SERVICE_NAME}-https.tls.certresolver=myresolver"
+        - "traefik.http.services.${SERVICE_NAME}.loadbalancer.server.port=6001"           
       restart_policy:
         condition: on-failure
         max_attempts: 3
