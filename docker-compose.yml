@@ -54,7 +54,7 @@ services:
       LOG_LEVEL: ${LOG_LEVEL:-info}
       EXTERNAL_API_KEY: ${EXTERNAL_API_KEY:-dev-external-key-change-in-production}
       UPLOADS_DIR: ${UPLOADS_DIR:-/app/uploads}
-      IG_ACCESS_TOKEN: ${UPLOADS_DIR}
+      IG_ACCESS_TOKEN: ${IG_ACCESS_TOKEN}
     depends_on:
       - redis-omnicanalidad
     ports:
