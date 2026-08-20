@@ -54,6 +54,7 @@ services:
       LOG_LEVEL: ${LOG_LEVEL:-info}
       EXTERNAL_API_KEY: ${EXTERNAL_API_KEY:-dev-external-key-change-in-production}
       UPLOADS_DIR: ${UPLOADS_DIR:-/app/uploads}
+      IG_ACCESS_TOKEN: ${UPLOADS_DIR}
     depends_on:
       - redis-omnicanalidad
     ports:
@@ -185,7 +186,8 @@ services:
       SCHEDULER_EXECUTION_TIMEOUT_MS: ${SCHEDULER_EXECUTION_TIMEOUT_MS:-600000}
       NODE_OPTIONS: ${NODE_OPTIONS:---max-old-space-size=2048}
       LOG_LEVEL: ${LOG_LEVEL:-info}
-      - UPLOADS_DIR: ${UPLOADS_DIR:-/app/uploads}
+      UPLOADS_DIR: ${UPLOADS_DIR:-/app/uploads}
+      IG_ACCESS_TOKEN: ${UPLOADS_DIR}
     volumes:
       - backend_uploads:/app/uploads
       - backend_logs:/app/logs
