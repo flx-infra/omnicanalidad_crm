@@ -53,6 +53,7 @@ services:
       FRONTEND_URL: ${FRONTEND_URL:-http://10.250.0.98:6002}
       LOG_LEVEL: ${LOG_LEVEL:-info}
       EXTERNAL_API_KEY: ${EXTERNAL_API_KEY:-dev-external-key-change-in-production}
+      UPLOADS_DIR: ${UPLOADS_DIR:-/app/uploads}
     depends_on:
       - redis-omnicanalidad
     ports:
@@ -60,7 +61,6 @@ services:
     volumes:
       - backend_uploads:/app/uploads
       - backend_logs:/app/logs
-      - UPLOADS_DIR: ${UPLOADS_DIR:-/app/uploads}
     networks:
       - traefik
     healthcheck:
@@ -185,10 +185,10 @@ services:
       SCHEDULER_EXECUTION_TIMEOUT_MS: ${SCHEDULER_EXECUTION_TIMEOUT_MS:-600000}
       NODE_OPTIONS: ${NODE_OPTIONS:---max-old-space-size=2048}
       LOG_LEVEL: ${LOG_LEVEL:-info}
+      - UPLOADS_DIR: ${UPLOADS_DIR:-/app/uploads}
     volumes:
       - backend_uploads:/app/uploads
       - backend_logs:/app/logs
-      - UPLOADS_DIR: ${UPLOADS_DIR:-/app/uploads}
     deploy:
       placement:
         constraints:
