@@ -198,6 +198,7 @@ services:
       PROVIDER_PROVISIONING_DRIVER: ${PROVIDER_PROVISIONING_DRIVER}
       MAILJET_PARENT_API_KEY: ${MAILJET_PARENT_API_KEY}
       MAILJET_PARENT_API_SECRET: ${MAILJET_PARENT_API_SECRET}
+      META_GRAPH_API_VERSION: ${META_GRAPH_API_VERSION:-v21.0}
     volumes:
       - backend_uploads:/app/uploads
       - backend_logs:/app/logs
